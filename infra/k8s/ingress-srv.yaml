@@ -1,0 +1,33 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: vetta-ingress-srv
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/use-regex: "true"
+# spec:
+
+spec:
+  defaultBackend:
+    service:
+      name: vetta-auth-srv
+      port:
+        number: 80
+  rules:
+    - host: vetta.dev
+      http:
+        paths:
+          - path: /api/users/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: vetta-auth-srv
+                port:
+                  number: 3000
+          - path: /api/ticket/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: tickets-srv
+                port:
+                  number: 3000

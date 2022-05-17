@@ -17,7 +17,7 @@ spec:
           image: sohan0077/vetta-auth
           env:
             - name: MONGO_URI
-              value: "mongodb://auth-mongo-srv:27017/auth"
+              value: "mongodb+srv://sohan:sohan@cluster0.h2yqg.mongodb.net/?retryWrites=true&w=majority"
             - name: JWT_KEY
               valueFrom:
                 secretKeyRef:

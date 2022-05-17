@@ -1,0 +1,22 @@
+{
+  "name": "ticket",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node-dev src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@cygnetops/common": "^1.0.30",
+    "cookie-session": "^2.0.0",
+    "express": "^4.18.1",
+    "express-async-errors": "^3.1.1",
+    "express-validator": "^6.14.0",
+    "mongoose": "^6.3.3",
+    "node-nats-streaming": "^0.3.2",
+    "ts-node-dev": "^1.1.8"
+  }
+}
