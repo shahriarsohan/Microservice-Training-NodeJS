@@ -13,8 +13,10 @@ const start = async () => {
   }
 
   try {
-    // await mongoose.connect(process.env.MONGO_URI);
-    // console.log("Auth database connected to DB");
+    await mongoose.connect(
+      "mongodb+srv://sohan:sohan@cluster0.h2yqg.mongodb.net/?retryWrites=true&w=majority"
+    );
+    console.log("Auth database connected to DB");
   } catch (e) {
     console.log("Error connection to auth database", e);
   }

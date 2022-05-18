@@ -32,8 +32,10 @@ const start = async () => {
     process.on("SIGINT", () => natsWrapper.client.close());
     process.on("SIGTERM", () => natsWrapper.client.close());
 
-    // await mongoose.connect(process.env.MONGO_URI);
-    // console.log('Connected to MongoDb');
+    await mongoose.connect(
+      "mongodb+srv://sohan:sohan@cluster0.h2yqg.mongodb.net/?retryWrites=true&w=majority"
+    );
+    console.log("Ticket Connected to MongoDb");
   } catch (err) {
     console.error(err);
   }
