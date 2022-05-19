@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: vetta-order-srv
+spec:
+  selector:
+    app: order
+  ports:
+    - name: order-srv
+      protocol: TCP
+      port: 3000
+      targetPort: 3000

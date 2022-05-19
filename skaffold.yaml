@@ -24,3 +24,12 @@ build:
         manual:
           - dest: .
             src: "src/**/*.ts"
+
+    - image: sohan0077/vetta-order-two
+      context: order
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - dest: .
+            src: "src/**/*.ts"

@@ -31,3 +31,10 @@ spec:
                 name: tickets-srv
                 port:
                   number: 3000
+          - path: /api/orders/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: vetta-order-srv
+                port:
+                  number: 3000
