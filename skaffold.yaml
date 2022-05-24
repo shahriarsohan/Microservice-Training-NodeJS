@@ -42,3 +42,12 @@ build:
         manual:
           - dest: .
             src: "src/**/*.ts"
+
+    - image: sohan0077/vetta-payments
+      context: payments
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - dest: .
+            src: "src/**/*.ts"

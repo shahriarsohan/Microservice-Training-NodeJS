@@ -20,9 +20,10 @@ export const currentUser = (
   next: NextFunction
 ) => {
   if (!req.session?.jwt) {
-    console.log(req.session);
     return next();
   }
+
+  console.log("jwt", req.session);
 
   try {
     const payload = jwt.verify(
