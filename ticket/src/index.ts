@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
 import { app } from "./app";
+import { OrderCancelledListener } from "./events/listener/order-cancelled-listener";
+import { OrderCreatedListener } from "./events/listener/order-created-listener";
 import { natsWrapper } from "./nats-Wrapper";
 
 const start = async () => {
@@ -31,6 +33,9 @@ const start = async () => {
     });
     process.on("SIGINT", () => natsWrapper.client.close());
     process.on("SIGTERM", () => natsWrapper.client.close());
+
+    new OrderCreatedListener(natsWrapper.client).listen();
+    new OrderCancelledListener(natsWrapper.client).listen();
 
     await mongoose.connect(
       "mongodb+srv://sohan:sohan@cluster0.h2yqg.mongodb.net/?retryWrites=true&w=majority"

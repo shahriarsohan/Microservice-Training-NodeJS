@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: vetta-order
-          image: sohan0077/vetta-order-two
+          image: sohan0077/vetta-order-three
           env:
             - name: NATS_CLIENT_ID
               valueFrom:
@@ -25,7 +25,7 @@ spec:
             - name: NATS_CLUSTER_ID
               value: ticket
             - name: MONGO_URI
-              value: "mongodb+srv://sohan:sohan@cluster0.h2yqg.mongodb.net/?retryWrites=true&w=majority"
+              value: "mongodb+srv://sohan:sohan@cluster0.bgxtp.mongodb.net/?retryWrites=true&w=majority"
             - name: JWT_KEY
               valueFrom:
                 secretKeyRef:

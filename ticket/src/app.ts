@@ -8,6 +8,7 @@ import { currentUser } from "./middleware/current-user";
 import { showTicketRouter } from "./routes/showTicket";
 import { updateTicketRouter } from "./routes/updateTicket";
 import { indexTicketRouter } from "./routes";
+import { deleteAll } from "./routes/deleteAll";
 
 const app = express();
 app.set("trust proxy", true);
@@ -24,6 +25,7 @@ app.use(createTicketRouter);
 app.use(showTicketRouter);
 app.use(indexTicketRouter);
 app.use(updateTicketRouter);
+app.use(deleteAll);
 
 app.all("*", async (req, res) => {
   throw new NotFoundError();

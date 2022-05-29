@@ -24,12 +24,10 @@ const start = async () => {
       process.exit();
     });
 
-    console.log("working");
-
     process.on("SIGINT", () => natsWrapper.client.close());
     process.on("SIGTERM", () => natsWrapper.client.close());
 
-    // new OrderCreateListener(natsWrapper.client).listen();
+    new OrderCreateListener(natsWrapper.client).listen();
   } catch (error) {
     console.log("err in index", error);
   }

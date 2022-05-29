@@ -1,0 +1,17 @@
+127.0.0.1 localhost
+127.0.0.1 sohan
+
+127.0.0.1 kubernetes.docker.internal
+
+::1 localhost
+
+127.0.0.1 vetta.dev
+192.168.49.2 vetta.dev
+
+
+
+
+
+
+
+

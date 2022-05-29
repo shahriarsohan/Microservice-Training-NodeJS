@@ -23,8 +23,6 @@ export const currentUser = (
     return next();
   }
 
-  console.log("jwt", req.session);
-
   try {
     const payload = jwt.verify(
       req.session.jwt,

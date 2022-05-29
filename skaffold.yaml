@@ -25,7 +25,7 @@ build:
           - dest: .
             src: "src/**/*.ts"
 
-    - image: sohan0077/vetta-order-two
+    - image: sohan0077/vetta-order-three
       context: order
       docker:
         dockerfile: Dockerfile

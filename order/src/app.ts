@@ -4,7 +4,7 @@ import { json } from "body-parser";
 import cookieSession from "cookie-session";
 import { errorHandler, NotFoundError, currentUser } from "@cygnetops/common";
 import { indexOrderRouter } from "./routes";
-import { createOrderRouter } from "./routes/create";
+import { newOrderRouter } from "./routes/create";
 import { showOrderRouter } from "./routes/show";
 import { deleteOrderRouter } from "./routes/delete";
 
@@ -26,7 +26,7 @@ app.use(currentUser);
 app.use(indexOrderRouter);
 app.use(showOrderRouter);
 app.use(deleteOrderRouter);
-app.use(createOrderRouter);
+app.use(newOrderRouter);
 
 app.all("*", async (req, res) => {
   throw new NotFoundError();
